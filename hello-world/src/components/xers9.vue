@@ -1,6 +1,14 @@
 <template>
 <div>
-  <h1> {{title}} </h1>
+  <p>Header</p>
+  <slot name="header" :xers9="xers9"></slot>
+  <p>Body</p>
+  <slot name="body"></slot>
+  <slot></slot>
+  <p>footer</p>
+  <slot name="footer"></slot>
+  <slot>
+  </slot>
   <p> {{ name}} </p><br>
   <button @click="updateName"> Change Name </button>
 </div>  
@@ -19,6 +27,7 @@ export default {
       data() {
           return {
               name: 'xers9',
+              xers9: 'My return data'
           }
       },
       methods: {
